@@ -1,0 +1,22 @@
+name: dev
+description: Dev tools for PB CLI
+version: 0.0.1-alpha.1
+
+environment:
+  sdk: ^3.2.0
+
+dependencies:
+  pb_server:
+    path: '../server'
+  args: ^2.5.0
+  path: ^1.9.0
+  collection: ^1.18.0
+  json_annotation: ^4.9.0
+  io: ^1.0.4
+  uuid: ^4.4.0
+
+dev_dependencies:
+  lints: ^4.0.0
+  test: ^1.25.5
+  build_runner: ^2.4.9
+  json_serializable: ^6.8.0

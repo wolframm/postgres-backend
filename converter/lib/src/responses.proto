@@ -1,0 +1,301 @@
+syntax = "proto3";
+package responses;
+import "types.proto";
+import "struct.proto";
+
+
+message Int {
+  sint32 data = 1;
+}
+
+message SetOfInt {
+  repeated Int data = 1;
+}
+
+message IntArray {
+  repeated sint32 data = 1;
+}
+
+message SetOfIntArray {
+  repeated IntArray data = 1;
+}
+
+message Int8 {
+  sint64 data = 1;
+}
+
+message SetOfInt8 {
+  repeated Int8 data = 1;
+}
+
+message Int8Array {
+  repeated sint64 data = 1;
+}
+
+message SetOfInt8Array {
+  repeated Int8Array data = 1;
+}
+
+message UInt8 {
+  uint64 data = 1;
+}
+
+message SetOfUInt8 {
+  repeated UInt8 data = 1;
+}
+
+message UInt8Array {
+  repeated uint64 data = 1;
+}
+
+message SetOfUInt8Array {
+  repeated UInt8Array data = 1;
+}
+
+message String {
+  string data = 1;
+}
+
+message SetOfString {
+  repeated String data = 1;
+}
+
+message StringArray{
+  repeated  string data = 1;
+}
+
+message SetOfStringArray {
+  repeated StringArray data = 1;
+}
+
+message Float {
+  float data = 1;
+}
+
+message SetOfFloat {
+  repeated Float data = 1;
+}
+
+message FloatArray {
+  repeated float data = 1;
+}
+
+message SetOfFloatArray {
+  repeated FloatArray data = 1;
+}
+
+message Double {
+  Double data = 1;
+}
+
+message SetOfDouble {
+  repeated Double data = 1;
+}
+
+message DoubleArray {
+  repeated Double data = 1;
+}
+
+message SetOfDoubleArray {
+  repeated DoubleArray data = 1;
+}
+
+message Interval {
+  types.Interval data = 1;
+}
+
+message SetOfInterval {
+  repeated Interval data = 1;
+}
+
+message IntervalArray {
+  repeated types.Interval data = 1;
+}
+
+message SetOfIntervalArray {
+  repeated IntervalArray data = 1;
+}
+
+message Bytes {
+  bytes data = 1;
+}
+
+message SetOfBytes {
+  repeated Bytes data = 1;
+}
+
+message Bool {
+  bool data = 1;
+}
+
+message SetOfBool {
+  repeated Bool data = 1;
+}
+
+message BoolArray{
+  repeated  bool data = 1;
+}
+
+message SetOfBoolArray {
+  repeated BoolArray data = 1;
+}
+
+message Point {
+  types.Point data = 1;
+}
+
+message SetOfPoint{
+  repeated Point data = 1;
+}
+
+message PointArray {
+  repeated types.Point data = 1;
+}
+
+message SetOfPointArray {
+  repeated PointArray data = 1;
+}
+
+message Line {
+  types.Line data = 1;
+}
+
+message SetOfLine{
+  repeated Line data = 1;
+}
+
+message LineArray {
+  repeated types.Line data = 1;
+}
+
+message SetOfLineArray {
+  repeated LineArray data = 1;
+}
+
+message LineSegment {
+  types.LineSegment data = 1;
+}
+
+message SetOfLineSegment{
+  repeated LineSegment data = 1;
+}
+
+message LineSegmentArray {
+  repeated types.LineSegment data = 1;
+}
+
+message SetOfLineSegmentArray {
+  repeated LineSegmentArray data = 1;
+}
+
+message Box {
+  types.Box data = 1;
+}
+
+message SetOfBox{
+  repeated Box data = 1;
+}
+
+message BoxArray {
+  repeated types.Box data = 1;
+}
+
+message SetOfBoxArray {
+  repeated BoxArray data = 1;
+}
+
+message Path {
+  types.Path data = 1;
+}
+
+message SetOfPath{
+  repeated Path data = 1;
+}
+
+message PathArray {
+  repeated types.Path data = 1;
+}
+
+message SetOfPathArray {
+  repeated PathArray data = 1;
+}
+
+message Polygon {
+  types.Polygon data = 1;
+}
+
+message SetOfPolygon{
+  repeated Polygon data = 1;
+}
+
+message PolygonArray {
+  repeated types.Polygon data = 1;
+}
+
+message SetOfPolygonArray {
+  repeated PolygonArray data = 1;
+}
+
+message Circle {
+  types.Circle data = 1;
+}
+
+message SetOfCircle{
+  repeated Circle data = 1;
+}
+
+message CircleArray {
+  repeated types.Circle data = 1;
+}
+
+message SetOfCircleArray {
+  repeated CircleArray data = 1;
+}
+
+message Struct {
+  struct.Struct data = 1;
+}
+
+message SetOfStruct {
+  repeated Struct data = 1;
+}
+
+message StructArray {
+  repeated struct.Struct data = 1;
+}
+
+message SetOfStructArray {
+  repeated StructArray data = 1;
+}
+
+message  UInt32Range {
+  types.UInt32Range data = 1;
+}
+
+message SetOfUInt32Range{
+  repeated UInt32Range data = 1 ;
+}
+
+message  SInt32Range {
+  types.SInt32Range data = 1;
+}
+
+message SetOfSInt32Range{
+  repeated SInt32Range data = 1 ;
+}
+
+message  UInt64Range {
+  types.UInt64Range data = 1;
+}
+
+message SetOfUInt64Range{
+  repeated UInt64Range data = 1 ;
+}
+
+message  SInt64Range {
+  types.SInt64Range data = 1;
+}
+
+message SetOfSInt64Range{
+  repeated SInt64Range data = 1 ;
+}

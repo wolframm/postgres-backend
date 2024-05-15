@@ -1,0 +1,7 @@
+.idea
+.dart_tool
+.DS_store
+*.iml
+pubspec.lock
+temp
+out

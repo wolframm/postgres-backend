@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cnpg-controller-manager-config
+  namespace: cnpg-system
+data:
+  INHERITED_ANNOTATIONS: linkerd.io/* config.linkerd.io/*
+  ENABLE_INSTANCE_MANAGER_INPLACE_UPDATES: 'true'

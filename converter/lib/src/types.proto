@@ -1,0 +1,79 @@
+syntax = "proto3";
+package types;
+
+message Void {}
+
+message Interval {
+  int32 months = 1;
+  int32 days = 2;
+  int64 microseconds = 3;
+}
+
+message Point {
+  double latitude = 1;
+  double longitude = 2;
+}
+
+message Line {
+  double a = 1;
+  double b = 2;
+  double c = 3;
+}
+
+message LineSegment {
+  Point p1 = 1;
+  Point p2 = 2;
+}
+
+message Box {
+  Point p1 = 1;
+  Point p2 = 2;
+}
+
+message Path {
+  repeated Point points = 1;
+  optional bool open = 2;
+}
+
+message Polygon {
+  repeated Point points = 1;
+}
+
+message Circle {
+  Point center = 1;
+  double radius = 2;
+}
+
+enum Bound {
+  exclusive = 0;
+  inclusive = 1;
+}
+
+message Bounds {
+  Bound lower = 1;
+  Bound upper = 2;
+}
+
+message UInt32Range {
+  optional uint32 lower = 1;
+  optional uint32 upper = 2;
+  Bounds bounds = 3;
+}
+
+message SInt32Range {
+  optional sint32 lower = 1;
+  optional sint32 upper = 2;
+  Bounds bounds = 3;
+}
+
+message UInt64Range {
+  optional uint64 lower = 1;
+  optional uint64 upper = 2;
+  Bounds bounds = 3;
+}
+
+message SInt64Range {
+  optional sint64 lower = 1;
+  optional sint64 upper = 2;
+  Bounds bounds = 3;
+}

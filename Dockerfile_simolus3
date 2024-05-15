@@ -1,0 +1,26 @@
+# Taken from: https://github.com/simolus3/drift/issues/2708#issuecomment-1793725756
+
+# Use latest stable channel SDK.
+FROM dart:stable AS build
+
+RUN apt update && apt install libsqlite3-0
+
+# Resolve app dependencies.
+WORKDIR /app
+COPY pubspec.* ./
+RUN dart pub get
+
+# Copy app source code (except anything in .dockerignore) and AOT compile app.
+COPY auth .
+RUN dart compile exe bin/server.dart -o bin/server
+
+# Build minimal serving image from AOT-compiled `/server`
+# and the pre-built AOT-runtime in the `/runtime/` directory of the base image.
+FROM scratch
+COPY --from=build /usr/lib/x86_64-linux-gnu/libsqlite3.so.0 /usr/lib/x86_64-linux-gnu/libsqlite3.so
+COPY --from=build /runtime/ /
+COPY --from=build /app/bin/server /app/bin/
+
+# Start server.
+EXPOSE 8080
+CMD ["/app/bin/server"]

@@ -1,0 +1,23 @@
+name: pb_converter
+description: CLI for Postgres Backend
+version: 0.0.1-alpha.1
+
+executables:
+  pb:
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  postgres: ^3.2.0
+  protobuf: ^3.1.0
+  io: ^1.0.4
+  decimal: ^2.3.3
+  fast_immutable_collections: ^10.2.3
+
+
+dev_dependencies:
+  lints: ^4.0.0
+  build_runner: ^2.4.9
+  json_serializable: ^6.7.1
+  test: ^1.25.5

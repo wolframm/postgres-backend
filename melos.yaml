@@ -1,0 +1,41 @@
+name: postgres_backend
+
+packages:
+  - dev
+  - cli
+  - converter
+  - client
+  - server
+  - ext_auth
+
+ide:
+  intellij:
+    enabled: true
+    moduleNamePrefix: ''
+
+command:
+  bootstrap:
+    usePubspecOverrides: true
+  version:
+    releaseUrl: true
+
+
+scripts:
+  reset_dev_db:
+    description: 'Initialize a new dev database on localhost'
+    run: dart run MELOS_ROOT_PATH/dev/bin/dev.dart init -i MELOS_ROOT_PATH/pb.sql
+  reset_dev_container:
+    description: 'Reset postgres container and initialize a new dev database on localhost'
+    run: dart run MELOS_ROOT_PATH/dev/bin/dev.dart init -i MELOS_ROOT_PATH/pb.sql -r
+  apply_app_sql:
+    description: 'Initialize a new dev database on localhost'
+    run: dart run MELOS_ROOT_PATH/dev/bin/dev.dart init -i MELOS_ROOT_PATH/pb.sql; dart run MELOS_ROOT_PATH/dev/bin/dev.dart migrate -i MELOS_ROOT_PATH/app.sql
+  translate:
+    description: 'Translate intl messages'
+    run: melos exec --file-exists='translate.sh' ./translate.sh
+  compile_tool:
+    description: 'Compile the CLI'
+    run: dart compile exe pb_cli/bin/dev.dart -o /usr/local/bin/pb --suppress-analytics
+  generate:
+    description: 'Runs PB with output going to some folder'
+    run: dart run MELOS_ROOT_PATH/pb/bin/pb.dart -v -o MELOS_ROOT_PATH/out
