@@ -1,29 +1,30 @@
 name: pb_server
 description: Postgres-Backend Server Library
 version: 0.0.1-alpha.2
+repository: https://github.com/wolframm/postgres-backend/tree/9ce36c3604e97ac539858a1229983ee0348cd12e/server
 
 environment:
-  sdk: ^3.1.4
+  sdk: ^3.4.0
 
 dependencies:
   protobuf: ^3.1.0
-  dart_jsonwebtoken: ^2.13.0
+  dart_jsonwebtoken: ^2.14.0
   grpc: ^3.2.4
-  sodium: ^2.3.0
+  sodium: ^2.3.1+1
   random_string: ^2.3.1
   path: ^1.9.0
   enum_to_string: ^2.0.1
-  args: ^2.4.2
+  args: ^2.5.0
   logging: ^1.2.0
   email_validator: ^2.1.17
   equatable: ^2.0.5
-  json_annotation: ^4.8.1
+  json_annotation: ^4.9.0
   async: ^2.11.0
-  postgres: ^3.1.2
+  postgres: ^3.2.0
 
 
 dev_dependencies:
-  lints: ^3.0.0
-  test: ^1.25.2
+  lints: ^4.0.0
+  test: ^1.25.5
   build_runner: ^2.4.9
-  json_serializable: ^6.7.1
+  json_serializable: ^6.8.0
