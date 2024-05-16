@@ -1,6 +1,6 @@
 name: pb_cli
 description: CLI for Postgres Backend
-version: 0.0.1-alpha.11
+version: 0.0.1-alpha.12
 
 executables:
   pb:
@@ -9,7 +9,7 @@ environment:
   sdk: '>=3.4.0 <4.0.0'
 
 dependencies:
-  pb_server: 0.0.1-alpha.11
+  pb_server: 0.0.1-alpha.12
   dart_style: ^2.3.6
   code_builder: ^4.10.0
   io: ^1.0.4
