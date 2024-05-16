@@ -6,7 +6,7 @@ executables:
   pb:
 
 environment:
-  sdk: '>=3.0.0 <4.0.0'
+  sdk: '>=3.4.0 <4.0.0'
 
 dependencies:
   postgres: ^3.2.0
@@ -14,7 +14,7 @@ dependencies:
   io: ^1.0.4
   decimal: ^2.3.3
   fast_immutable_collections: ^10.2.3
-
+  build_version: ^2.1.1
 
 dev_dependencies:
   lints: ^4.0.0

@@ -19,7 +19,7 @@ command:
   version:
     releaseUrl: true
     hooks:
-      preCommit: cd server; dart run build_runner build;
+      preCommit: ./preCommit.sh
 
 
 scripts:
