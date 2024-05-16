@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`pb_client` - `v0.0.1-alpha.3`](#pb_client---v001-alpha3)
+
+---
+
+#### `pb_client` - `v0.0.1-alpha.3`
+
+ - **FEAT**: cli pubspec generator.
+
+
+## 2024-05-16
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`pb_cli` - `v0.0.1-alpha.13`](#pb_cli---v001-alpha13)
  - [`pb_converter` - `v0.0.1-alpha.7`](#pb_converter---v001-alpha7)
  - [`pb_server` - `v0.0.1-alpha.13`](#pb_server---v001-alpha13)
