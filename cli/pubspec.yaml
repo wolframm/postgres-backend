@@ -21,10 +21,10 @@ dependencies:
   petitparser: ^6.0.2
   fast_immutable_collections: ^10.2.3
   decimal: ^2.3.3
-  build_version: ^2.1.1
   pub_semver: ^2.1.4
 
 dev_dependencies:
   lints: ^4.0.0
   build_runner: ^2.4.9
   json_serializable: ^6.7.1
+  pubspec_generator: ^4.0.0

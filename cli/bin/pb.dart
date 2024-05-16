@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:args/args.dart';
 import 'package:args/command_runner.dart';
 import 'package:pb_cli/pb_cli.dart';
-import 'package:pb_server/server.dart';
+import 'package:pb_server/pb_server.dart';
 
 main(List<String> args) async {
   final parser = ArgParser();
