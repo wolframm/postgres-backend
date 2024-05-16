@@ -10,7 +10,7 @@ App _$AppFromJson(Map<String, dynamic> json) => App(
       json['path'] as String,
       json['id'] as String,
       ServerArgs.fromJson(json['cp'] as Map<String, dynamic>),
-    )..pid = json['pid'] as int?;
+    )..pid = (json['pid'] as num?)?.toInt();
 
 Map<String, dynamic> _$AppToJson(App instance) => <String, dynamic>{
       'path': instance.path,
