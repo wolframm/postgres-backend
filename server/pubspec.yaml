@@ -1,6 +1,6 @@
 name: pb_server
 description: Postgres-Backend Server Library
-version: 0.0.1-alpha.4
+version: 0.0.1-alpha.7
 repository: https://github.com/wolframm/postgres-backend/tree/9ce36c3604e97ac539858a1229983ee0348cd12e/server
 
 environment:
