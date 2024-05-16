@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:args/command_runner.dart';
 import 'package:dev/dev.dart';
-import 'package:pb_server/server.dart';
+import 'package:pb_server/pb_server.dart';
 
 main(List<String> args) async {
   final runner = CommandRunner('pbdev', '''
