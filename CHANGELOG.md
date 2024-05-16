@@ -15,6 +15,42 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`dev` - `v0.0.1-alpha.11`](#dev---v001-alpha11)
+ - [`pb_cli` - `v0.0.1-alpha.11`](#pb_cli---v001-alpha11)
+ - [`pb_converter` - `v0.0.1-alpha.5`](#pb_converter---v001-alpha5)
+ - [`pb_server` - `v0.0.1-alpha.11`](#pb_server---v001-alpha11)
+
+---
+
+#### `dev` - `v0.0.1-alpha.11`
+
+ - **FEAT**: modified preCommit script.
+
+#### `pb_cli` - `v0.0.1-alpha.11`
+
+ - **FEAT**: modified preCommit script.
+
+#### `pb_converter` - `v0.0.1-alpha.5`
+
+ - **FEAT**: modified preCommit script.
+
+#### `pb_server` - `v0.0.1-alpha.11`
+
+ - **FEAT**: modified preCommit script.
+
+
+## 2024-05-16
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`dev` - `v0.0.1-alpha.10`](#dev---v001-alpha10)
  - [`pb_cli` - `v0.0.1-alpha.10`](#pb_cli---v001-alpha10)
  - [`pb_converter` - `v0.0.1-alpha.4`](#pb_converter---v001-alpha4)

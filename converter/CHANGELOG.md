@@ -1,3 +1,7 @@
+## 0.0.1-alpha.5
+
+ - **FEAT**: modified preCommit script.
+
 ## 0.0.1-alpha.4
 
  - **FEAT**: added version shell script.
