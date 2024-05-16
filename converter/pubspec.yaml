@@ -1,6 +1,6 @@
 name: pb_converter
 description: CLI for Postgres Backend
-version: 0.0.1-alpha.2
+version: 0.0.1-alpha.4
 
 executables:
   pb:

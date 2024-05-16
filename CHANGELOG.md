@@ -15,6 +15,84 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`dev` - `v0.0.1-alpha.10`](#dev---v001-alpha10)
+ - [`pb_cli` - `v0.0.1-alpha.10`](#pb_cli---v001-alpha10)
+ - [`pb_converter` - `v0.0.1-alpha.4`](#pb_converter---v001-alpha4)
+ - [`pb_server` - `v0.0.1-alpha.10`](#pb_server---v001-alpha10)
+
+---
+
+#### `dev` - `v0.0.1-alpha.10`
+
+ - **FEAT**: improved preCommit script.
+ - **FEAT**: updated package imports.
+
+#### `pb_cli` - `v0.0.1-alpha.10`
+
+ - **FEAT**: updated package imports.
+
+#### `pb_converter` - `v0.0.1-alpha.4`
+
+ - **FEAT**: added version shell script.
+ - **FEAT**: improved preCommit script.
+
+#### `pb_server` - `v0.0.1-alpha.10`
+
+ - **FEAT**: added version shell script.
+ - **FEAT**: improved preCommit script.
+ - **FEAT**: updated package imports.
+ - **FEAT**: pb_server ready for first publish.
+ - **FEAT**: added license to server.
+ - **DOCS**: added text to README.md.
+
+
+## 2024-05-16
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`pb_converter` - `v0.0.1-alpha.3`](#pb_converter---v001-alpha3)
+ - [`pb_server` - `v0.0.1-alpha.9`](#pb_server---v001-alpha9)
+ - [`dev` - `v0.0.1-alpha.9`](#dev---v001-alpha9)
+ - [`pb_cli` - `v0.0.1-alpha.9`](#pb_cli---v001-alpha9)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `dev` - `v0.0.1-alpha.9`
+ - `pb_cli` - `v0.0.1-alpha.9`
+
+---
+
+#### `pb_converter` - `v0.0.1-alpha.3`
+
+ - **FEAT**: added version shell script.
+
+#### `pb_server` - `v0.0.1-alpha.9`
+
+ - **FEAT**: added version shell script.
+
+
+## 2024-05-16
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`dev` - `v0.0.1-alpha.8`](#dev---v001-alpha8)
  - [`pb_client` - `v0.0.1-alpha.2`](#pb_client---v001-alpha2)
  - [`pb_converter` - `v0.0.1-alpha.2`](#pb_converter---v001-alpha2)

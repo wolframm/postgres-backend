@@ -1,3 +1,16 @@
+## 0.0.1-alpha.10
+
+ - **FEAT**: added version shell script.
+ - **FEAT**: improved preCommit script.
+ - **FEAT**: updated package imports.
+ - **FEAT**: pb_server ready for first publish.
+ - **FEAT**: added license to server.
+ - **DOCS**: added text to README.md.
+
+## 0.0.1-alpha.9
+
+ - **FEAT**: added version shell script.
+
 ## 0.0.1-alpha.8
 
  - **FEAT**: improved preCommit script.

@@ -1,3 +1,12 @@
+## 0.0.1-alpha.10
+
+ - **FEAT**: improved preCommit script.
+ - **FEAT**: updated package imports.
+
+## 0.0.1-alpha.9
+
+ - Update a dependency to the latest release.
+
 ## 0.0.1-alpha.8
 
  - **FEAT**: improved preCommit script.
