@@ -1,3 +1,7 @@
+## 0.0.1-alpha.4
+
+ - **DOCS**: added text to README.md.
+
 ## 0.0.1-alpha.3
 
  - **FEAT**: pb_server ready for first publish.
