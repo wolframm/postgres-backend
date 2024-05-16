@@ -15,6 +15,44 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`pb_cli` - `v0.0.1-alpha.13`](#pb_cli---v001-alpha13)
+ - [`pb_converter` - `v0.0.1-alpha.7`](#pb_converter---v001-alpha7)
+ - [`pb_server` - `v0.0.1-alpha.13`](#pb_server---v001-alpha13)
+ - [`dev` - `v0.0.1-alpha.13`](#dev---v001-alpha13)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `dev` - `v0.0.1-alpha.13`
+
+---
+
+#### `pb_cli` - `v0.0.1-alpha.13`
+
+ - **FEAT**: better versioning.
+
+#### `pb_converter` - `v0.0.1-alpha.7`
+
+ - **FEAT**: better versioning.
+
+#### `pb_server` - `v0.0.1-alpha.13`
+
+ - **FEAT**: better versioning.
+
+
+## 2024-05-16
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`pb_cli` - `v0.0.1-alpha.12`](#pb_cli---v001-alpha12)
  - [`pb_converter` - `v0.0.1-alpha.6`](#pb_converter---v001-alpha6)
  - [`pb_server` - `v0.0.1-alpha.12`](#pb_server---v001-alpha12)

@@ -1,3 +1,7 @@
+## 0.0.1-alpha.7
+
+ - **FEAT**: better versioning.
+
 ## 0.0.1-alpha.6
 
  - **FEAT**: precommit.
