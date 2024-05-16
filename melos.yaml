@@ -18,6 +18,8 @@ command:
     usePubspecOverrides: true
   version:
     releaseUrl: true
+    hooks:
+      preCommit: dart run build_runner build
 
 
 scripts:

@@ -9,11 +9,11 @@ part of 'server_args.dart';
 ServerArgs _$ServerArgsFromJson(Map<String, dynamic> json) => ServerArgs._(
       json['host'] as String,
       json['hostRo'] as String?,
-      json['dbPort'] as int,
+      (json['dbPort'] as num).toInt(),
       json['database'] as String,
       json['username'] as String,
       json['password'] as String,
-      json['serverPort'] as int,
+      (json['serverPort'] as num).toInt(),
     );
 
 Map<String, dynamic> _$ServerArgsToJson(ServerArgs instance) =>

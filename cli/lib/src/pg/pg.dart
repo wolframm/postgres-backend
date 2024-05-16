@@ -1,7 +1,7 @@
 import 'package:collection/collection.dart';
 import 'package:equatable/equatable.dart';
 import 'package:fast_immutable_collections/fast_immutable_collections.dart';
-import 'package:pb_server/server.dart';
+import 'package:pb_server/pb_server.dart';
 import '../postgres.dart';
 import 'directive.dart';
 

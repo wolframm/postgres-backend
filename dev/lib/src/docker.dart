@@ -2,7 +2,8 @@ import 'dart:io';
 
 import 'package:dev/src/dev_dir.dart';
 import 'package:path/path.dart' as p;
-import 'package:pb_server/server.dart';
+import 'package:pb_server/pb_server.dart';
+
 
 
 const dockerfileContent = r'''

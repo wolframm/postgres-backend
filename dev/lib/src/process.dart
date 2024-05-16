@@ -1,7 +1,6 @@
 import 'dart:io';
 
-import 'package:pb_server/server.dart';
-
+import 'package:pb_server/pb_server.dart';
 
 Future<String> runProcess(String executable, List<String> arguments,
     {Directory? workDir,
@@ -22,4 +21,3 @@ Future<String> runProcess(String executable, List<String> arguments,
   }
   return res.stdout;
 }
-

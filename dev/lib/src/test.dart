@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:io/io.dart';
 import 'package:path/path.dart' as p;
-import 'package:pb_server/server.dart';
+import 'package:pb_server/pb_server.dart';
 
 
 import 'start.dart';

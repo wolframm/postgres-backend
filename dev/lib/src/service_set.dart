@@ -7,7 +7,7 @@ import 'package:collection/collection.dart';
 import 'package:dev/src/docker.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:path/path.dart' as p;
-import 'package:pb_server/server.dart';
+import 'package:pb_server/pb_server.dart';
 
 import 'package:uuid/v7.dart';
 
@@ -57,8 +57,7 @@ final class ServiceSet {
   String toString() =>
       'Service Set: $database [${apps.map((e) => e.toString()).join(',')}]';
 
-  static String _database(ServerArgs cp, String id) =>
-      '${cp.database}_$id';
+  static String _database(ServerArgs cp, String id) => '${cp.database}_$id';
 
   /// Name of the service set's database
   String get database => _database(cp, id);

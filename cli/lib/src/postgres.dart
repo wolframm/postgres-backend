@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:pb_server/server.dart';
+import 'package:pb_server/pb_server.dart';
 
 Connection? _connection;
 
