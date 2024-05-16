@@ -1,3 +1,7 @@
+## 0.0.1-alpha.8
+
+ - **FEAT**: improved preCommit script.
+
 ## 0.0.1-alpha.7
 
  - **FEAT**: updated package imports.

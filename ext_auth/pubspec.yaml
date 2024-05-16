@@ -1,6 +1,6 @@
 name: pb_ext_auth
 description: Stubs generated from https://github.com/envoyproxy/data-plane-api.git
-version: 0.0.0-alpha.1
+version: 0.0.0-alpha.2
 
 environment:
   sdk: ^3.2.0
