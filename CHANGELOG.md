@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`pb_client` - `v0.0.1-alpha.5`](#pb_client---v001-alpha5)
+
+---
+
+#### `pb_client` - `v0.0.1-alpha.5`
+
+ - **FEAT**: copying the right pubspec_client.
+
+
+## 2024-05-19
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`pb_cli` - `v0.0.1-alpha.14`](#pb_cli---v001-alpha14)
  - [`pb_client` - `v0.0.1-alpha.4`](#pb_client---v001-alpha4)
 
