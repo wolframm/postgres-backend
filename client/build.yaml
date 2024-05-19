@@ -1,0 +1,10 @@
+targets:
+  $default:
+    sources:
+      - $package$
+      - lib/**
+      - pubspec.yaml
+    builders:
+      pubspec_generator:
+        options:
+          output: ../cli/lib/src/pubspec_client.yaml.g.dart
