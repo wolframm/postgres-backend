@@ -7,4 +7,4 @@ targets:
     builders:
       pubspec_generator:
         options:
-          output: ../cli/lib/src/pubspec_client.yaml.g.dart
+          output: lib/src/pubspec.yaml.g.dart
