@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-05-19
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`pb_cli` - `v0.0.1-alpha.14`](#pb_cli---v001-alpha14)
+ - [`pb_client` - `v0.0.1-alpha.4`](#pb_client---v001-alpha4)
+
+---
+
+#### `pb_cli` - `v0.0.1-alpha.14`
+
+ - **FEAT**: added pubspec generator to client lib.
+
+#### `pb_client` - `v0.0.1-alpha.4`
+
+ - **FEAT**: added pubspec generator to client lib.
+
+
 ## 2024-05-16
 
 ### Changes
