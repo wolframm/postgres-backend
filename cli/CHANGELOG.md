@@ -1,3 +1,7 @@
+## 0.0.1-alpha.15
+
+ - **FEAT**: added pubspec gen to server lib.
+
 ## 0.0.1-alpha.14
 
  - **FEAT**: added pubspec generator to client lib.

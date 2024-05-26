@@ -93,13 +93,13 @@ sealed class Pubspec {
   static const PubspecVersion version = (
     /// Non-canonical string representation of the version as provided
     /// in the pubspec.yaml file.
-    representation: r'0.0.1-alpha.7',
+    representation: r'0.0.1-alpha.14',
 
     /// Returns a 'canonicalized' representation
     /// of the application version.
     /// This represents the version string in accordance with
     /// Semantic Versioning (SemVer) standards.
-    canonical: r'0.0.1-alpha.7',
+    canonical: r'0.0.1-alpha.14',
 
     /// MAJOR version when you make incompatible API changes.
     /// The major version number: 1 in "1.2.3".
@@ -115,7 +115,7 @@ sealed class Pubspec {
     patch: 1,
 
     /// The pre-release identifier: "foo" in "1.2.3-foo".
-    preRelease: <String>[r'alpha', r'7'],
+    preRelease: <String>[r'alpha', r'14'],
 
     /// The build identifier: "foo" in "1.2.3+foo".
     build: <String>[],
@@ -128,9 +128,9 @@ sealed class Pubspec {
     26,
     5,
     17,
-    32,
-    30,
-    385,
+    38,
+    70,
+    344,
   );
 
   /// Name
@@ -150,7 +150,7 @@ sealed class Pubspec {
   /// Try to pick a name that is clear, terse, and not already in use.
   /// A quick search of packages on the [pub.dev site](https://pub.dev/packages)
   /// to make sure that nothing else is using your name is recommended.
-  static const String name = r'pb_client';
+  static const String name = r'pb_server';
 
   /// Description
   ///
@@ -165,7 +165,7 @@ sealed class Pubspec {
   /// Think of the description as the sales pitch for your package.
   /// Users see it when they [browse for packages](https://pub.dev/packages).
   /// The description is plain text: no markdown or HTML.
-  static const String description = r'Flutter client for Postgres Backend';
+  static const String description = r'Postgres-Backend Server Library';
 
   /// Homepage
   ///
@@ -192,7 +192,7 @@ sealed class Pubspec {
   /// While providing a repository is optional,
   /// please provide it or homepage (or both).
   /// It helps users understand where your package is coming from.
-  static const String repository = r'';
+  static const String repository = r'https://github.com/wolframm/postgres-backend/tree/9ce36c3604e97ac539858a1229983ee0348cd12e/server';
 
   /// Issue tracker
   ///
@@ -346,8 +346,7 @@ sealed class Pubspec {
 
   /// Environment
   static const Map<String, String> environment = <String, String>{
-    'sdk': '>=3.1.4 <4.0.0',
-    'flutter': '>=3.1.4 <4.0.0',
+    'sdk': '^3.4.0',
   };
 
   /// Platforms
@@ -407,26 +406,29 @@ sealed class Pubspec {
   /// For more information,
   /// see [Package dependencies](https://dart.dev/tools/pub/dependencies).
   static const Map<String, Object> dependencies = <String, Object>{
-    'flutter': <String, Object>{
-      'sdk': r'flutter',
-    },
-    'shared_preferences': r'^2.2.3',
-    'base32': r'^2.1.3',
-    'fixnum': r'^1.1.0',
-    'date_time': r'^0.11.0',
+    'protobuf': r'^3.1.0',
+    'dart_jsonwebtoken': r'^2.14.0',
     'grpc': r'^3.2.4',
-    'dart_jsonwebtoken': r'',
+    'sodium': r'^2.3.1+1',
+    'random_string': r'^2.3.1',
+    'path': r'^1.9.0',
+    'enum_to_string': r'^2.0.1',
+    'args': r'^2.5.0',
+    'logging': r'^1.2.0',
+    'email_validator': r'^2.1.17',
+    'equatable': r'^2.0.5',
+    'json_annotation': r'^4.9.0',
+    'async': r'^2.11.0',
+    'postgres': r'^3.2.0',
   };
 
   /// Developer dependencies
   static const Map<String, Object> devDependencies = <String, Object>{
+    'lints': r'^4.0.0',
+    'test': r'^1.25.5',
+    'build_runner': r'^2.4.9',
+    'json_serializable': r'^6.8.0',
     'pubspec_generator': r'^4.0.0',
-    'build_version': r'^2.1.1',
-    'build_runner': r'^2.4.10',
-    'flutter_test': <String, Object>{
-      'sdk': r'flutter',
-    },
-    'flutter_lints': r'^4.0.0',
   };
 
   /// Dependency overrides
@@ -481,7 +483,6 @@ sealed class Pubspec {
     'dependencies': dependencies,
     'dev_dependencies': devDependencies,
     'dependency_overrides': dependencyOverrides,
-    'flutter': r'',
   };
 
 }
