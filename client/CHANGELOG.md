@@ -1,3 +1,7 @@
+## 0.0.1-alpha.7
+
+ - **FEAT**: added pubspec gen to server lib.
+
 ## 0.0.1-alpha.6
 
  - **BUG**: copying pubspec_client.

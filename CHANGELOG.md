@@ -3,6 +3,44 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-05-26
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`pb_cli` - `v0.0.1-alpha.15`](#pb_cli---v001-alpha15)
+ - [`pb_client` - `v0.0.1-alpha.7`](#pb_client---v001-alpha7)
+ - [`pb_server` - `v0.0.1-alpha.14`](#pb_server---v001-alpha14)
+ - [`dev` - `v0.0.1-alpha.14`](#dev---v001-alpha14)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `dev` - `v0.0.1-alpha.14`
+
+---
+
+#### `pb_cli` - `v0.0.1-alpha.15`
+
+ - **FEAT**: added pubspec gen to server lib.
+
+#### `pb_client` - `v0.0.1-alpha.7`
+
+ - **FEAT**: added pubspec gen to server lib.
+
+#### `pb_server` - `v0.0.1-alpha.14`
+
+ - **FEAT**: added pubspec gen to server lib.
+
+
 ## 2024-05-19
 
 ### Changes
