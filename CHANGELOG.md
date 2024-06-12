@@ -3,6 +3,42 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-06-12
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`dev` - `v0.0.1-alpha.15`](#dev---v001-alpha15)
+ - [`pb_cli` - `v0.0.1-alpha.16`](#pb_cli---v001-alpha16)
+ - [`pb_client` - `v0.0.1-alpha.8`](#pb_client---v001-alpha8)
+ - [`pb_server` - `v0.0.1-alpha.15`](#pb_server---v001-alpha15)
+
+---
+
+#### `dev` - `v0.0.1-alpha.15`
+
+ - **FEAT**: pb_dev basic refactor done.
+
+#### `pb_cli` - `v0.0.1-alpha.16`
+
+ - **FEAT**: pb_dev basic refactor done.
+
+#### `pb_client` - `v0.0.1-alpha.8`
+
+ - **FEAT**: pb_dev basic refactor done.
+
+#### `pb_server` - `v0.0.1-alpha.15`
+
+ - **FEAT**: pb_dev basic refactor done.
+
+
 ## 2024-05-26
 
 ### Changes

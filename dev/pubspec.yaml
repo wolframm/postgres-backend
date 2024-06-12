@@ -1,12 +1,12 @@
 name: dev
 description: Dev helper for PB CLI
-version: 0.0.1-alpha.14
+version: 0.0.1-alpha.15
 
 environment:
   sdk: ^3.2.0
 
 dependencies:
-  pb_cli: 0.0.1-alpha.15
+  pb_cli: 0.0.1-alpha.16
   args: ^2.5.0
   path: ^1.9.0
   collection: ^1.18.0
