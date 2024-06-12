@@ -4,17 +4,14 @@ import 'dart:io';
 
 import 'package:args/args.dart';
 import 'package:collection/collection.dart';
-import 'package:dev/src/docker.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:path/path.dart' as p;
-import 'package:pb_server/pb_server.dart';
-
+import 'package:pb_cli/pb_cli.dart';
 import 'package:uuid/v7.dart';
 
 import 'app.dart';
-import 'database.dart';
+import 'db.dart';
 import 'dev_dir.dart';
-import 'postgres.dart';
 
 part 'service_set.g.dart';
 

@@ -17,7 +17,7 @@ generateProtoDef() {
     final service = _serviceDef(routines);
     final def = header + enums + models + requests + responses + service;
     final type = target.serverOnly ? LibraryType.server : LibraryType.shared;
-    GeneratedFile.add(
+    GeneratedCode.add(
         type, target, ['lib', 'src', 'model'], FileType.proto, def);
     print('Proto def generated for @${target.name}');
   }

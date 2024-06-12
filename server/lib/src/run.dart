@@ -11,6 +11,6 @@ run(ServerArgs serverArgs, List<grpc.Service> services) async {
   final port = serverArgs.serverPort;
   await server.serve(port: port);
   log.info('Listening on port ${server.port}');
-  startShutdownListeners(shutdownTasks: server.shutdown);
+  startShutdownListeners(shutdownFn: server.shutdown);
   print('hello');
 }

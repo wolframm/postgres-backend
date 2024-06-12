@@ -1,4 +1,6 @@
-# melos_managed_dependency_overrides: pb_server
+# melos_managed_dependency_overrides: pb_server,pb_cli
 dependency_overrides:
+  pb_cli:
+    path: ../cli
   pb_server:
     path: ../server

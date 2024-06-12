@@ -11,8 +11,7 @@ class ServerArgs {
   late final String host;
   late final String? hostRo;
   late final int dbPort;
-  late final String database;
-  late final String username, password;
+  late final String database, username, password;
   late final int serverPort;
 
   ServerArgs._(this.host, this.hostRo, this.dbPort, this.database,
@@ -39,11 +38,11 @@ class ServerArgs {
     parser.addOption('host-ro',
         valueHelp: 'The hostname for read-only workloads.');
     parser.addOption('db-port',
-        valueHelp: 'The port to connect to the database on',
+        valueHelp: 'The port on which the database listens for connections',
         defaultsTo: '5432');
     parser.addOption('database',
         defaultsTo: postgres,
-        valueHelp: 'The name of the database to connect to');
+        valueHelp: 'The name of the database');
     parser.addOption('username',
         defaultsTo: postgres,
         valueHelp:

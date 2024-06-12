@@ -64,8 +64,8 @@ enum FileType {
   yaml,
 }
 
-class GeneratedFile {
-  static final List<GeneratedFile> _all = [];
+class GeneratedCode {
+  static final List<GeneratedCode> _all = [];
 
   final Target targetLibrary;
 
@@ -75,25 +75,19 @@ class GeneratedFile {
   final String content;
   final FileType fileType;
 
-  // GeneratedFile.addProtoDef(this.targetLibrary, this.name, this.content)
-  //     : libraryType = LibraryType.shared,
-  //       fileType = FileType.proto {
-  //   _all.add(this);
-  // }
-
-  GeneratedFile.add(this.libraryType, this.targetLibrary, this.filePath,
+  GeneratedCode.add(this.libraryType, this.targetLibrary, this.filePath,
       this.fileType, this.content) {
     _all.add(this);
   }
 
-  GeneratedFile.addDartLib(
+  GeneratedCode.addDartLib(
       this.libraryType, this.targetLibrary, this.filePath, Library lib)
       : content = DartFormatter().format('${lib.accept(dartEmitter)}'),
         fileType = FileType.dart {
     _all.add(this);
   }
 
-  /// Write all [GeneratedFile]s
+  /// Write all [GeneratedCode]
   static writeAll(String out) async {
     final dir = Directory(out);
     if (await dir.exists()) await dir.delete(recursive: true);

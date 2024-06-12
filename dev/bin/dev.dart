@@ -1,141 +1,123 @@
 import 'dart:io';
 
+import 'package:args/args.dart';
 import 'package:args/command_runner.dart';
 import 'package:dev/dev.dart';
-import 'package:pb_server/pb_server.dart';
+import 'package:pb_cli/pb_cli.dart';
 
 main(List<String> args) async {
-  final runner = CommandRunner('pbdev', '''
-
-POSTGRES BACKEND - DEV CLI
-  
-Run basic schema migrations, services and tests''')
-    ..addCommand(Init())
-    ..addCommand(Migrate())
-    ..addCommand(Start())
-    ..addCommand(Stop())
-    ..addCommand(Test());
-
-  initLogging('DEV', true);
   try {
-    await runner.run(args);
+    final argResults = _parse(args);
+    initLogging('PB_DEV', argResults['verbose']);
+    final serverArgs = ServerArgs.fromArgResults(argResults);
+    await start(serverArgs, out(argResults));
+    await migrate(serverArgs, argResults['sql']);
+    await run_pb(argResults);
+    // TODO: call service runner here
+    // TODO: call test runner here
+    if (argResults['wait']) {
+      await startShutdownListeners(shutdownFn: stopAll);
+    } else {
+      await stopAll();
+    }
     exit(0);
+  } catch (e) {
+    log.severe(e);
+    exit(1);
+  }
+}
+
+Future<void> stopAll() async {
+  await stop();
+}
+
+ArgResults _parse(List<String> args) {
+  final parser = ArgParser();
+  parser.addSeparator(
+      '\nPOSTGRES BACKEND DEV CLI - Helper for running Postgres, PB and PB-generated services in Docker\n');
+  parser.addFlag('help', abbr: 'h', help: 'Display usage information');
+  addVerboseFlag(parser);
+  outputPath(parser);
+  parser.addMultiOption('sql',
+      abbr: 's',
+      help:
+          'One or more .SQl files to apply to the database. Files are applied in the order listed.');
+  parser.addFlag('run', abbr: 'r', help: 'Run the generated backend services');
+  parser.addFlag('wait',
+      abbr: 'w', help: 'Keep running until aborted with CTRL-C.');
+  parser.addMultiOption('test',
+      abbr: 't',
+      help:
+          'Specify one or more test folders, test files or test names (path_to_folder/name).');
+  ServerArgs.addToArgParser(parser);
+  try {
+    final argResults = parser.parse(args);
+    if (argResults['help']) {
+      print(parser.usage);
+      exit(0);
+    }
+    return argResults;
   } on UsageException catch (e) {
-    print(e);
+    log.severe(e);
     exit(64);
   } catch (e) {
     rethrow;
   }
 }
 
-class Init extends Command {
-  Init() {
-    argParser.addOption('input',
-        abbr: 'i',
-        valueHelp: 'Path to a .sql file that contains initial SQL statements.');
-    argParser.addFlag('reset', abbr: 'r', help: 'Reset the database container');
-    ServerArgs.addToArgParser(argParser);
-  }
+// class Start extends Command {
+//   Start() {
+//     argParser.addFlag('docker',
+//         help: 'Run services in Docker instead of locally');
+//     argParser.addMultiOption('apps',
+//         abbr: 'a',
+//         valueHelp:
+//         'One or more paths to Dart packages. The program file must be in the "bin" folder and its name must match the package name.');
+//     ServerArgs.addToArgParser(argParser);
+//   }
+//
+//   @override
+//   String get description =>
+//       'Create a service set consisting of a database copy and service apps.';
+//
+//   @override
+//   String get name => 'start';
+//
+//   @override
+//   Future<void> run() async {
+//     final set = ServiceSet.fromArgs(argResults!);
+//     await set.start();
+//     log.info('Service set ${set.database} started.');
+//   }
+// }
 
-  @override
-  String get description =>
-      'Initialize a new database in the Postgres instance running in Docker.\nDrops existing PB database of the same name and all PB roles.';
-
-  @override
-  String get name => 'init';
-
-  @override
-  Future<void> run() async {
-    await ServiceSet.stopAll(delete: true);
-    final serverArgs = ServerArgs.fromArgResults(argResults!);
-    if (argResults!['reset']) {
-      await resetDatabaseContainer(postgres, serverArgs);
-    }
-    await resetDatabase(serverArgs);
-    if (argResults!['input'] != null) {
-      await migrate(argResults!['input'], serverArgs);
-    }
-  }
-}
-
-class Migrate extends Command {
-  Migrate() {
-    argParser.addOption('input',
-        abbr: 'i',
-        mandatory: true,
-        valueHelp:
-            'Path to a .sql file that contains migration SQL statements.');
-    ServerArgs.addToArgParser(argParser);
-  }
-
-  @override
-  String get description =>
-      'Run schema migrations for Postgres instances running in Docker.';
-
-  @override
-  String get name => 'migrate';
-
-  @override
-  Future<void> run() async {
-    await ServiceSet.stopAll(delete: true);
-    final cp = ServerArgs.fromArgResults(argResults!);
-    await migrate(argResults!['input'], cp);
-  }
-}
-
-class Start extends Command {
-  Start() {
-    argParser.addFlag('docker',
-        help: 'Run services in Docker instead of locally');
-    argParser.addMultiOption('apps',
-        abbr: 'a',
-        valueHelp:
-            'One or more paths to Dart packages. The program file must be in the "bin" folder and its name must match the package name.');
-    ServerArgs.addToArgParser(argParser);
-  }
-
-  @override
-  String get description =>
-      'Create a service set consisting of a database copy and service apps.';
-
-  @override
-  String get name => 'start';
-
-  @override
-  Future<void> run() async {
-    final set = ServiceSet.fromArgs(argResults!);
-    await set.start();
-    log.info('Service set ${set.database} started.');
-  }
-}
-
-class Stop extends Command {
-  Stop() {
-    argParser.addOption('service-set',
-        abbr: 's',
-        help:
-            'The ID of the service set to stop. If not provided, all service sets are stopped.',
-        valueHelp: '06338364-8305-7b74-8000-de4963503139');
-    argParser.addFlag('keepDatabase',
-        abbr: 'k', help: 'Keep the database copy (do not delete it)');
-    argParser.addFlag('delete-logs',
-        abbr: 'd', help: "Delete all log files", defaultsTo: false);
-    ServerArgs.addToArgParser(argParser);
-  }
-
-  @override
-  String get description => 'Stop a service set';
-
-  @override
-  String get name => 'stop';
-
-  @override
-  Future<void> run() async {
-    if (argResults!['service-set'] == null) await ServiceSet.stopAll();
-    final set = await ServiceSet.load(argResults!['service-set']);
-    await set?.stopApps();
-  }
-}
+// class Stop extends Command {
+//   Stop() {
+//     argParser.addOption('service-set',
+//         abbr: 's',
+//         help:
+//             'The ID of the service set to stop. If not provided, all service sets are stopped.',
+//         valueHelp: '06338364-8305-7b74-8000-de4963503139');
+//     argParser.addFlag('keepDatabase',
+//         abbr: 'k', help: 'Keep the database copy (do not delete it)');
+//     argParser.addFlag('delete-logs',
+//         abbr: 'd', help: "Delete all log files", defaultsTo: false);
+//     ServerArgs.addToArgParser(argParser);
+//   }
+//
+//   @override
+//   String get description => 'Stop a service set';
+//
+//   @override
+//   String get name => 'stop';
+//
+//   @override
+//   Future<void> run() async {
+//     if (argResults!['service-set'] == null) await ServiceSet.stopAll();
+//     final set = await ServiceSet.load(argResults!['service-set']);
+//     await set?.stopApps();
+//   }
+// }
 
 class Test extends Command {
   Test() {

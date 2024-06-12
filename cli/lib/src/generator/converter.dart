@@ -24,7 +24,7 @@ generateModelConverters() {
       ])
       ..body.addAll([...tables.map((e) => _class(e))]));
     final type = target.serverOnly ? LibraryType.server : LibraryType.shared;
-    GeneratedFile.addDartLib(type, target, ['lib', 'src', 'converter'], lib);
+    GeneratedCode.addDartLib(type, target, ['lib', 'src', 'converter'], lib);
     print('Data models generated for @${target.name}');
   }
 }

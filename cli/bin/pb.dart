@@ -7,17 +7,11 @@ import 'package:pb_server/pb_server.dart';
 
 main(List<String> args) async {
   final parser = ArgParser();
-
   parser.addSeparator(
       '\nPOSTGRES BACKEND CLI - Generate server and client libraries from a Postgres database\n');
   parser.addFlag('help', abbr: 'h', help: 'Display usage information');
   addVerboseFlag(parser);
-  parser.addOption('out',
-      abbr: 'o',
-      help:
-          'Folder where the libraries are deposited.\nIf the folder exists it will be overwritten.\nIf it does not exist, it will be created.',
-      valueHelp: './some/relative/or/absolute/path',
-      mandatory: true);
+  outputPath(parser);
   ServerArgs.addToArgParser(parser);
   try {
     final argResults = parser.parse(args);
@@ -26,20 +20,12 @@ main(List<String> args) async {
       return;
     }
     initLogging('PB', argResults['verbose']);
-    final serverArgs = ServerArgs.fromArgResults(argResults);
-    await openConnection(serverArgs);
-    await introspect(serverArgs);
-
-    await generate(argResults['out']);
-    // await updatePrivileges();
-
+    await run_pb(argResults);
     exit(0);
   } on UsageException catch (e) {
     log.severe(e);
     exit(64);
   } catch (e) {
     rethrow;
-  } finally {
-    await closeConnection();
   }
 }

@@ -15,7 +15,7 @@ generateDartEnums() {
       ..comments.add(doNotModify)
       ..body.addAll(enums.map((e) => _enum(e))));
     final type = target.serverOnly ? LibraryType.server : LibraryType.shared;
-    GeneratedFile.addDartLib(type, target, ['lib', 'src', 'enum'], lib);
+    GeneratedCode.addDartLib(type, target, ['lib', 'src', 'enum'], lib);
     print('Dart enums generated for @${target.name}');
   }
 }

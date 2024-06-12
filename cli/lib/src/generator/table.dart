@@ -17,7 +17,7 @@ generateDartTables() {
       ])
       ..body.addAll(tables.map((e) => _class(e))));
     final type = target.serverOnly ? LibraryType.server : LibraryType.shared;
-    GeneratedFile.addDartLib(type, target, ['lib', 'src', 'table'], lib);
+    GeneratedCode.addDartLib(type, target, ['lib', 'src', 'table'], lib);
     print('Dart table row classes generated for @${target.name}');
   }
 }
