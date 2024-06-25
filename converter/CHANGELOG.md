@@ -1,3 +1,7 @@
+## 0.0.1-alpha.9
+
+ - **FEAT**: added pubspec_generator.
+
 ## 0.0.1-alpha.8
 
  - **FEAT**: adding converter spec.
