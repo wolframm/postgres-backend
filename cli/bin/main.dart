@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:args/args.dart';
 import 'package:args/command_runner.dart';
 import 'package:pb_cli/pb_cli.dart';
-import 'package:pb_server/pb_server.dart';
 
 main(List<String> args) async {
   final parser = ArgParser();
@@ -12,6 +11,7 @@ main(List<String> args) async {
   parser.addFlag('help', abbr: 'h', help: 'Display usage information');
   addVerboseFlag(parser);
   outputPath(parser);
+  localLibs(parser);
   ServerArgs.addToArgParser(parser);
   try {
     final argResults = parser.parse(args);

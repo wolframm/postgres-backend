@@ -6,38 +6,34 @@ import 'package:dev/dev.dart';
 import 'package:pb_cli/pb_cli.dart';
 
 main(List<String> args) async {
-  try {
-    final argResults = _parse(args);
-    initLogging('PB_DEV', argResults['verbose']);
-    final serverArgs = ServerArgs.fromArgResults(argResults);
-    await start(serverArgs, out(argResults));
-    await migrate(serverArgs, argResults['sql']);
-    await run_pb(argResults);
-    // TODO: call service runner here
-    // TODO: call test runner here
-    if (argResults['wait']) {
-      await startShutdownListeners(shutdownFn: stopAll);
-    } else {
-      await stopAll();
-    }
+  final parser = _argParser();
+  final argResults = _parse(parser, args);
+  initLogging('PB_DEV', argResults['verbose']);
+  final serverArgs = ServerArgs.fromArgResults(argResults);
+  await clearOutDir(outDir(argResults));
+  await startDbContainer(serverArgs, outDir(argResults), argResults['sql']);
+  await run_pb(argResults);
+  // TODO: call service runner here
+  // TODO: call test runner here
+  if (argResults['wait']) {
+    await startShutdownListeners(shutdownFn: stopAll);
+  } else {
+    await stopAll();
     exit(0);
-  } catch (e) {
-    log.severe(e);
-    exit(1);
   }
 }
 
 Future<void> stopAll() async {
-  await stop();
+  await stopDbContainer();
 }
 
-ArgResults _parse(List<String> args) {
-  final parser = ArgParser();
-  parser.addSeparator(
-      '\nPOSTGRES BACKEND DEV CLI - Helper for running Postgres, PB and PB-generated services in Docker\n');
+ArgParser _argParser() {
+  final parser = ArgParser(usageLineLength: 120);
+  parser.addSeparator('\nDEV CLI for POSTGRES BACKEND\n');
   parser.addFlag('help', abbr: 'h', help: 'Display usage information');
   addVerboseFlag(parser);
   outputPath(parser);
+  localLibs(parser);
   parser.addMultiOption('sql',
       abbr: 's',
       help:
@@ -50,6 +46,10 @@ ArgResults _parse(List<String> args) {
       help:
           'Specify one or more test folders, test files or test names (path_to_folder/name).');
   ServerArgs.addToArgParser(parser);
+  return parser;
+}
+
+ArgResults _parse(ArgParser parser, List<String> args) {
   try {
     final argResults = parser.parse(args);
     if (argResults['help']) {

@@ -3,10 +3,12 @@
 /// More dartdocs go here.
 library;
 
+export 'package:equatable/equatable.dart';
 export 'package:postgres/postgres.dart';
+export 'package:con';
 
 export 'src/constants.dart';
 export 'src/logging.dart';
-export 'src/shutdown.dart';
 export 'src/run.dart';
 export 'src/server_args.dart';
+export 'src/shutdown.dart';

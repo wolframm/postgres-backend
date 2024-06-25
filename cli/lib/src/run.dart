@@ -10,7 +10,7 @@ run_pb(ArgResults argResults) async {
     final serverArgs = ServerArgs.fromArgResults(argResults);
     await openConnection(serverArgs);
     await introspect(serverArgs);
-    await generate(argResults['out']);
+    await generate(argResults);
   } catch (e) {
     rethrow;
   } finally {

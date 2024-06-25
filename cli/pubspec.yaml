@@ -13,7 +13,6 @@ dependencies:
   dart_style: ^2.3.6
   code_builder: ^4.10.0
   io: ^1.0.4
-  checked_yaml: ^2.0.3
   json_annotation: ^4.9.0
   string_validator: ^1.0.2
   pubspec_parse: ^1.2.3
@@ -22,6 +21,7 @@ dependencies:
   fast_immutable_collections: ^10.2.3
   decimal: ^2.3.3
   pub_semver: ^2.1.4
+  yaml_writer: ^2.0.0
 
 dev_dependencies:
   lints: ^4.0.0

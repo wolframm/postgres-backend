@@ -32,7 +32,7 @@ Future<Result> execute(String query,
     {Map<String, dynamic>? parameters, QueryMode? queryMode}) async {
   final message = 'Connection not initialized';
   final connection = _connection ?? (throw Exception(message));
-  return await connection.execute(query,
+  return connection.execute(query,
       parameters: parameters, queryMode: queryMode);
 }
 

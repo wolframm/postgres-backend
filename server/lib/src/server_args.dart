@@ -32,27 +32,25 @@ class ServerArgs {
     parser.addOption(
       'host',
       defaultsTo: 'localhost',
-      valueHelp:
+      help:
           'The hostname for read-write workloads, e.g. "foobar.com" or IP address. Do not include scheme or port.',
     );
-    parser.addOption('host-ro',
-        valueHelp: 'The hostname for read-only workloads.');
+    parser.addOption('host-ro', help: 'The hostname for read-only workloads.');
     parser.addOption('db-port',
-        valueHelp: 'The port on which the database listens for connections',
+        help: 'The port on which the database listens for connections',
         defaultsTo: '5432');
     parser.addOption('database',
-        defaultsTo: postgres,
-        valueHelp: 'The name of the database');
+        defaultsTo: postgres, help: 'The name of the database');
     parser.addOption('username',
         defaultsTo: postgres,
-        valueHelp:
+        help:
             'Username for authenticating the connection. The user role must have superuser privileges.');
     parser.addOption('password',
         defaultsTo: postgres,
-        valueHelp: 'Password for authenticating the connection.');
+        help: 'Password for authenticating the connection.');
     parser.addSeparator('Server Settings');
     parser.addOption('server-port',
-        valueHelp: 'The port the server will listen on', defaultsTo: '8080');
+        help: 'The port the server will listen on', defaultsTo: '8080');
   }
 
   ServerArgs copyWith(

@@ -117,22 +117,20 @@ class GeneratedCode {
   }
 
   static List<Directory> serverSrcDirs(String out) {
-    final res = <Directory>{};
+    final res = Set<String>();
     for (final file in _all)
       if (file.libraryType.index > LibraryType.client.index)
-        res.add(Directory(
-            p.join(out, file.targetLibrary.name + '_server', 'lib', 'src')));
-    return res.toList(growable: false);
+        res.add(p.join(out, file.targetLibrary.name + '_server', 'lib', 'src'));
+    return res.map((e) => Directory(e)).toList(growable: false);
   }
 
   static List<Directory> clientSrcDirs(String out) {
-    final res = <Directory>{};
+    final res = Set<String>();
     for (final file in _all)
       if (file.libraryType == LibraryType.shared ||
           file.libraryType == LibraryType.client)
-        res.add(Directory(
-            p.join(out, file.targetLibrary.name + '_server', 'lib', 'src')));
-    return res.toList(growable: false);
+        res.add(p.join(out, file.targetLibrary.name + '_client', 'lib', 'src'));
+    return res.map((e) => Directory(e)).toList(growable: false);
   }
 }
 

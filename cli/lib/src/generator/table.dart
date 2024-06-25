@@ -28,7 +28,6 @@ Reference _tableRef(PgTable table) => refer(_tableName(table));
 
 Class _class(PgTable table) => Class((b) => b
   ..docs.addAll([if (table.docString != null) table.docString!])
-  ..annotations.add(refer('immutable'))
   ..modifier = ClassModifier.final$
   ..name = _tableName(table)
   ..extend = refer('Equatable')
@@ -77,7 +76,7 @@ Method _copyWith(PgTable table) => Method((b) => b
   ..body = _tableRef(table).call(table.columns.map((e) => _init(e))).code);
 
 Parameter _copyWithArg(PgColumn column) => Parameter((b) => b
-  ..type = refer(_fieldSymbol(column.type))
+  ..type = refer(_fieldSymbol(column.type) + '?')
   ..named = true
   ..name = sqlToLowerCamel(column.name));
 

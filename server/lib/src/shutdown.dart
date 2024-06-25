@@ -9,6 +9,7 @@ import 'pool.dart';
 ///
 /// Once either signal is received, it runs the [shutdownFn] and then closes the database connection.
 startShutdownListeners({Future<void> Function()? shutdownFn}) {
+  log.fine('In shutdown listener fn...');
   StreamGroup.merge(
           [ProcessSignal.sigterm.watch(), ProcessSignal.sigint.watch()])
       .take(1)
@@ -25,5 +26,5 @@ startShutdownListeners({Future<void> Function()? shutdownFn}) {
       exit(1);
     }
   });
-  log.fine('Shutdown listeners started');
+  log.info('Shutdown listeners started');
 }

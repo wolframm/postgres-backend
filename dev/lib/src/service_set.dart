@@ -90,56 +90,56 @@ final class ServiceSet {
   delete() async {
     await stopApps();
     await deleteAppLogs();
-    await await _dropDatabase();
+    // await await _dropDatabase();
     if (await _json.exists()) {
       await _json.delete();
       log.fine('${_json.path} deleted');
     }
     log.warning('${_json.path} not found');
   }
+  //
+  // _createDatabase() async {
+  //   try {
+  //     await openConnection(cp);
+  //     await terminateOtherConnections(database);
+  //     await execute('drop database if exists $database');
+  //     await execute(
+  //         'create database $database with template ${cp.database} owner ${cp.username}');
+  //     await _save();
+  //     log.fine('Service set database $database created');
+  //   } catch (e) {
+  //     rethrow;
+  //   } finally {
+  //     await closeConnection();
+  //   }
+  // }
+  //
+  // _dropDatabase() async {
+  //   try {
+  //     if (await databaseContainerIsRunning(containerName: cp.database)) {
+  //       await openConnection(cp);
+  //       await terminateOtherConnections(database);
+  //       await execute('drop database if exists $database');
+  //       log.fine('Service set database $database dropped');
+  //     }
+  //   } catch (e) {
+  //     rethrow;
+  //   } finally {
+  //     await closeConnection();
+  //   }
+  // }
 
-  _createDatabase() async {
-    try {
-      await openConnection(cp);
-      await terminateOtherConnections(database);
-      await execute('drop database if exists $database');
-      await execute(
-          'create database $database with template ${cp.database} owner ${cp.username}');
-      await _save();
-      log.fine('Service set database $database created');
-    } catch (e) {
-      rethrow;
-    } finally {
-      await closeConnection();
-    }
-  }
-
-  _dropDatabase() async {
-    try {
-      if (await databaseContainerIsRunning(containerName: cp.database)) {
-        await openConnection(cp);
-        await terminateOtherConnections(database);
-        await execute('drop database if exists $database');
-        log.fine('Service set database $database dropped');
-      }
-    } catch (e) {
-      rethrow;
-    } finally {
-      await closeConnection();
-    }
-  }
-
-  start() async {
-    await _createDatabase();
-    try {
-      await Future.wait(apps.map((e) => e.start()));
-      log.fine('Dart apps for service set $id started');
-    } catch (e) {
-      print(e);
-    } finally {
-      await _save();
-    }
-  }
+  // start() async {
+  //   await _createDatabase();
+  //   try {
+  //     await Future.wait(apps.map((e) => e.start()));
+  //     log.fine('Dart apps for service set $id started');
+  //   } catch (e) {
+  //     print(e);
+  //   } finally {
+  //     await _save();
+  //   }
+  // }
 
   stopApps() async {
     await Future.wait(apps.map((e) => e.stop()));

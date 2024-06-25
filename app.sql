@@ -2,15 +2,45 @@ alter database postgres set default_transaction_isolation to serializable;
 
 create extension if not exists pg_cron;
 create extension if not exists pgcrypto;
-
--- create extension if not exists fuzzystrmatch;
--- create extension if not exists postgis;
--- create extension if not exists postgis_topology;
--- create extension if not exists postgis_tiger_geocoder;
+create extension if not exists citext;
 
 create schema app;
-alter role postgres in database postgres set search_path to app,pb,public;
-set search_path to app,pb,public;
+alter role postgres in database postgres set search_path to app,public;
+set search_path to app,public;
+
+create type app_exception as enum (
+    -- Error codes and ordering as defined by Google cloud apis
+    -- https://cloud.google.com/apis/design/errors#grpc_mapping
+    'INVALID_ARGUMENT',
+    'FAILED_PRECONDITION',
+    'OUT_OF_RANGE',
+    'UNAUTHENTICATED',
+    'PERMISSION_DENIED',
+    'NOT_FOUND',
+    'ABORTED',
+    'ALREADY_EXISTS',
+    'RESOURCE_EXHAUSTED',
+    'CANCELLED',
+    'DATA_LOSS',
+    'UNKNOWN',
+    'INTERNAL',
+    'NOT_IMPLEMENTED',
+    'UNAVAILABLE',
+    'DEADLINE_EXCEEDED'
+    );
+
+create domain email as citext
+    check ( value ~
+            '^[a-z0-9.!#$%&''*+/=?^_`{|}~-]+@[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)*$' );
+
+
+create or replace procedure raise(exc app_exception, detail text default '')
+    language plpgsql as
+$$
+begin
+    raise exception sqlstate 'APPXX' using message = exc::text, detail = $2;
+end;
+$$;
 
 
 create table language
@@ -212,7 +242,7 @@ $$
 declare
     _usr usr;
 begin
-    select into _usr from usr where id = uid();
+    select into _usr from usr where id = current_setting('pb_uid')::bigint;
     return _usr;
 end;
 $$;
@@ -460,7 +490,7 @@ create procedure sign_out(_jti bigint)
     security definer as
 $$
 begin
-    delete from session where jti = _jti and usr = uid();
+    delete from session where jti = _jti and usr = current_setting('pb_uid')::bigint;
     if not found then call raise('NOT_FOUND', 'session not found'); end if;
 end;
 $$;
@@ -474,7 +504,7 @@ create procedure sign_out_all()
     security definer as
 $$
 begin
-    delete from session where usr = uid();
+    delete from session where usr = current_setting('pb_uid')::bigint;
 end;
 $$;
 
@@ -551,7 +581,7 @@ begin
     end if;
 
     insert into auth_session (usr, language, tenant, recipient, refresh)
-    values (_uid, _language, _tenant, _recipient, _uid = uid())
+    values (_uid, _language, _tenant, _recipient, _uid = current_setting('pb_uid')::bigint)
     returning * into _auth_session;
     return _auth_session;
 end;
@@ -670,14 +700,14 @@ begin
     select count(*)
     into _device_count
     from totp_device
-    where usr = uid();
+    where usr = current_setting('pb_uid')::bigint;
 
     if _device_count >= 5 then
         call raise('RESOURCE_EXHAUSTED', 'maximum number of totp devices reached');
     end if;
 
     insert into pending_totp_device (name, usr, jti)
-    values (_name, uid(), jti());
+    values (_name, current_setting('pb_uid')::bigint, current_setting('pb_jti')::bigint);
 
     return _device.secret::text;
 end;
@@ -702,7 +732,7 @@ $$
 declare
     _device pending_totp_device;
 begin
-    select * into _device from pending_totp_device p where p.usr = uid() and p.jti = jti();
+    select * into _device from pending_totp_device p where p.usr = current_setting('pb_uid')::bigint and p.jti = current_setting('pb_jti')::bigint;
 
     if not found then
         call raise('NOT_FOUND', 'no pending device found');
@@ -719,14 +749,14 @@ begin
     if !totp_matches_secret(_device.secret, _totp) then
         update pending_totp_device
         set attempt = attempt + 1
-        where usr = uid();
+        where usr = current_setting('pb_uid')::bigint;
         return false;
     end if;
 
     insert into totp_device (usr, name, secret)
-    values (uid(), _device.name, _device.secret);
+    values (current_setting('pb_uid')::bigint, _device.name, _device.secret);
 
-    delete from pending_totp_device p where p.usr = uid() and p.jti = jti();
+    delete from pending_totp_device p where p.usr = current_setting('pb_uid')::bigint and p.jti = current_setting('pb_jti')::bigint;
 
     return true;
 end;
@@ -742,7 +772,7 @@ create procedure remove_totp_device(_name varchar(20))
 $$
 declare
 begin
-    delete from totp_device where usr = uid() and name = _name;
+    delete from totp_device where usr = current_setting('pb_uid')::bigint and name = _name;
     if not found then
         call raise('NOT_FOUND', 'totp device not found');
     end if;
