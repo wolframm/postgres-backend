@@ -15,6 +15,46 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`pb_client` - `v0.0.1-alpha.11`](#pb_client---v001-alpha11)
+ - [`pb_converter` - `v0.0.1-alpha.10`](#pb_converter---v001-alpha10)
+ - [`pb_server` - `v0.0.1-alpha.17`](#pb_server---v001-alpha17)
+ - [`pb_cli` - `v0.0.1-alpha.18`](#pb_cli---v001-alpha18)
+ - [`dev` - `v0.0.1-alpha.17`](#dev---v001-alpha17)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `pb_cli` - `v0.0.1-alpha.18`
+ - `dev` - `v0.0.1-alpha.17`
+
+---
+
+#### `pb_client` - `v0.0.1-alpha.11`
+
+ - **FEAT**: added build.yaml to converter lib.
+
+#### `pb_converter` - `v0.0.1-alpha.10`
+
+ - **FEAT**: added build.yaml to converter lib.
+
+#### `pb_server` - `v0.0.1-alpha.17`
+
+ - **FEAT**: added build.yaml to converter lib.
+
+
+## 2024-06-25
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`pb_client` - `v0.0.1-alpha.10`](#pb_client---v001-alpha10)
  - [`pb_converter` - `v0.0.1-alpha.9`](#pb_converter---v001-alpha9)
 
