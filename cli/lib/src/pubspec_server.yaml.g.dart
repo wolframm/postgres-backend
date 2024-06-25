@@ -93,13 +93,13 @@ sealed class Pubspec {
   static const PubspecVersion version = (
     /// Non-canonical string representation of the version as provided
     /// in the pubspec.yaml file.
-    representation: r'0.0.1-alpha.15',
+    representation: r'0.0.1-alpha.16',
 
     /// Returns a 'canonicalized' representation
     /// of the application version.
     /// This represents the version string in accordance with
     /// Semantic Versioning (SemVer) standards.
-    canonical: r'0.0.1-alpha.15',
+    canonical: r'0.0.1-alpha.16',
 
     /// MAJOR version when you make incompatible API changes.
     /// The major version number: 1 in "1.2.3".
@@ -115,7 +115,7 @@ sealed class Pubspec {
     patch: 1,
 
     /// The pre-release identifier: "foo" in "1.2.3-foo".
-    preRelease: <String>[r'alpha', r'15'],
+    preRelease: <String>[r'alpha', r'16'],
 
     /// The build identifier: "foo" in "1.2.3+foo".
     build: <String>[],
@@ -125,12 +125,12 @@ sealed class Pubspec {
   static final DateTime timestamp = DateTime.utc(
     2024,
     6,
-    12,
-    8,
-    18,
-    8,
-    598,
-    443,
+    25,
+    7,
+    55,
+    15,
+    684,
+    596,
   );
 
   /// Name
@@ -415,7 +415,7 @@ sealed class Pubspec {
     'enum_to_string': r'^2.0.1',
     'args': r'^2.5.0',
     'logging': r'^1.2.0',
-    'email_validator': r'^2.1.17',
+    'email_validator': r'^3.0.0',
     'equatable': r'^2.0.5',
     'json_annotation': r'^4.9.0',
     'async': r'^2.11.0',
@@ -425,8 +425,8 @@ sealed class Pubspec {
   /// Developer dependencies
   static const Map<String, Object> devDependencies = <String, Object>{
     'lints': r'^4.0.0',
-    'test': r'^1.25.5',
-    'build_runner': r'^2.4.10',
+    'test': r'^1.25.7',
+    'build_runner': r'^2.4.11',
     'json_serializable': r'^6.8.0',
     'pubspec_generator': r'^4.0.0',
   };
