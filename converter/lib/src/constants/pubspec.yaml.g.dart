@@ -93,13 +93,13 @@ sealed class Pubspec {
   static const PubspecVersion version = (
     /// Non-canonical string representation of the version as provided
     /// in the pubspec.yaml file.
-    representation: r'0.0.1-alpha.10',
+    representation: r'0.0.1-alpha.9',
 
     /// Returns a 'canonicalized' representation
     /// of the application version.
     /// This represents the version string in accordance with
     /// Semantic Versioning (SemVer) standards.
-    canonical: r'0.0.1-alpha.10',
+    canonical: r'0.0.1-alpha.9',
 
     /// MAJOR version when you make incompatible API changes.
     /// The major version number: 1 in "1.2.3".
@@ -115,7 +115,7 @@ sealed class Pubspec {
     patch: 1,
 
     /// The pre-release identifier: "foo" in "1.2.3-foo".
-    preRelease: <String>[r'alpha', r'10'],
+    preRelease: <String>[r'alpha', r'9'],
 
     /// The build identifier: "foo" in "1.2.3+foo".
     build: <String>[],
@@ -128,9 +128,9 @@ sealed class Pubspec {
     25,
     7,
     57,
-    0,
-    856,
-    505,
+    4,
+    102,
+    282,
   );
 
   /// Name
@@ -150,7 +150,7 @@ sealed class Pubspec {
   /// Try to pick a name that is clear, terse, and not already in use.
   /// A quick search of packages on the [pub.dev site](https://pub.dev/packages)
   /// to make sure that nothing else is using your name is recommended.
-  static const String name = r'pb_client';
+  static const String name = r'pb_converter';
 
   /// Description
   ///
@@ -165,7 +165,7 @@ sealed class Pubspec {
   /// Think of the description as the sales pitch for your package.
   /// Users see it when they [browse for packages](https://pub.dev/packages).
   /// The description is plain text: no markdown or HTML.
-  static const String description = r'Flutter client for Postgres Backend';
+  static const String description = r'CLI for Postgres Backend';
 
   /// Homepage
   ///
@@ -346,8 +346,7 @@ sealed class Pubspec {
 
   /// Environment
   static const Map<String, String> environment = <String, String>{
-    'sdk': '>=3.1.4 <4.0.0',
-    'flutter': '>=3.1.4 <4.0.0',
+    'sdk': '>=3.4.0 <4.0.0',
   };
 
   /// Platforms
@@ -407,26 +406,21 @@ sealed class Pubspec {
   /// For more information,
   /// see [Package dependencies](https://dart.dev/tools/pub/dependencies).
   static const Map<String, Object> dependencies = <String, Object>{
-    'flutter': <String, Object>{
-      'sdk': r'flutter',
-    },
-    'shared_preferences': r'^2.2.3',
-    'base32': r'^2.1.3',
+    'postgres': r'^3.2.1',
+    'protobuf': r'^3.1.0',
+    'io': r'^1.0.4',
+    'decimal': r'^3.0.2',
+    'fast_immutable_collections': r'^10.2.4',
     'fixnum': r'^1.1.0',
-    'date_time': r'^0.11.0',
-    'grpc': r'^3.2.4',
-    'dart_jsonwebtoken': r'',
   };
 
   /// Developer dependencies
   static const Map<String, Object> devDependencies = <String, Object>{
+    'lints': r'^4.0.0',
+    'build_runner': r'^2.4.11',
+    'json_serializable': r'^6.8.0',
+    'test': r'^1.25.7',
     'pubspec_generator': r'^4.0.0',
-    'build_version': r'^2.1.1',
-    'build_runner': r'^2.4.10',
-    'flutter_test': <String, Object>{
-      'sdk': r'flutter',
-    },
-    'flutter_lints': r'^4.0.0',
   };
 
   /// Dependency overrides
@@ -460,7 +454,9 @@ sealed class Pubspec {
   /// If you don’t specify the value, it is inferred from the key.
   ///
   /// For more information, see pub global.
-  static const Map<String, Object> executables = <String, Object>{};
+  static const Map<String, Object> executables = <String, Object>{
+    'pb': r'',
+  };
 
   /// Source data from pubspec.yaml
   static const Map<String, Object> source = <String, Object>{
@@ -481,7 +477,9 @@ sealed class Pubspec {
     'dependencies': dependencies,
     'dev_dependencies': devDependencies,
     'dependency_overrides': dependencyOverrides,
-    'flutter': r'',
+    'executables': <String, Object>{
+      'pb': r'',
+    },
   };
 
 }
