@@ -3,6 +3,47 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-06-25
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`dev` - `v0.0.1-alpha.16`](#dev---v001-alpha16)
+ - [`pb_cli` - `v0.0.1-alpha.17`](#pb_cli---v001-alpha17)
+ - [`pb_client` - `v0.0.1-alpha.9`](#pb_client---v001-alpha9)
+ - [`pb_converter` - `v0.0.1-alpha.8`](#pb_converter---v001-alpha8)
+ - [`pb_server` - `v0.0.1-alpha.16`](#pb_server---v001-alpha16)
+
+---
+
+#### `dev` - `v0.0.1-alpha.16`
+
+ - **FEAT**: adding converter spec.
+
+#### `pb_cli` - `v0.0.1-alpha.17`
+
+ - **FEAT**: adding converter spec.
+
+#### `pb_client` - `v0.0.1-alpha.9`
+
+ - **FEAT**: adding converter spec.
+
+#### `pb_converter` - `v0.0.1-alpha.8`
+
+ - **FEAT**: adding converter spec.
+
+#### `pb_server` - `v0.0.1-alpha.16`
+
+ - **FEAT**: adding converter spec.
+
+
 ## 2024-06-12
 
 ### Changes
