@@ -93,13 +93,13 @@ sealed class Pubspec {
   static const PubspecVersion version = (
     /// Non-canonical string representation of the version as provided
     /// in the pubspec.yaml file.
-    representation: r'0.0.1-alpha.18',
+    representation: r'0.0.1-alpha.10',
 
     /// Returns a 'canonicalized' representation
     /// of the application version.
     /// This represents the version string in accordance with
     /// Semantic Versioning (SemVer) standards.
-    canonical: r'0.0.1-alpha.18',
+    canonical: r'0.0.1-alpha.10',
 
     /// MAJOR version when you make incompatible API changes.
     /// The major version number: 1 in "1.2.3".
@@ -115,7 +115,7 @@ sealed class Pubspec {
     patch: 1,
 
     /// The pre-release identifier: "foo" in "1.2.3-foo".
-    preRelease: <String>[r'alpha', r'18'],
+    preRelease: <String>[r'alpha', r'10'],
 
     /// The build identifier: "foo" in "1.2.3+foo".
     build: <String>[],
@@ -128,9 +128,9 @@ sealed class Pubspec {
     25,
     7,
     59,
-    30,
-    467,
-    803,
+    27,
+    627,
+    988,
   );
 
   /// Name
@@ -150,7 +150,7 @@ sealed class Pubspec {
   /// Try to pick a name that is clear, terse, and not already in use.
   /// A quick search of packages on the [pub.dev site](https://pub.dev/packages)
   /// to make sure that nothing else is using your name is recommended.
-  static const String name = r'pb_cli';
+  static const String name = r'pb_converter';
 
   /// Description
   ///
@@ -406,26 +406,20 @@ sealed class Pubspec {
   /// For more information,
   /// see [Package dependencies](https://dart.dev/tools/pub/dependencies).
   static const Map<String, Object> dependencies = <String, Object>{
-    'pb_server': r'0.0.1-alpha.17',
-    'dart_style': r'^2.3.6',
-    'code_builder': r'^4.10.0',
+    'postgres': r'^3.2.1',
+    'protobuf': r'^3.1.0',
     'io': r'^1.0.4',
-    'json_annotation': r'^4.9.0',
-    'string_validator': r'^1.0.2',
-    'pubspec_parse': r'^1.2.3',
-    'enum_to_string': r'^2.0.1',
-    'petitparser': r'^6.0.2',
-    'fast_immutable_collections': r'^10.2.3',
-    'decimal': r'^2.3.3',
-    'pub_semver': r'^2.1.4',
-    'yaml_writer': r'^2.0.0',
+    'decimal': r'^3.0.2',
+    'fast_immutable_collections': r'^10.2.4',
+    'fixnum': r'^1.1.0',
   };
 
   /// Developer dependencies
   static const Map<String, Object> devDependencies = <String, Object>{
     'lints': r'^4.0.0',
-    'build_runner': r'^2.4.9',
-    'json_serializable': r'^6.7.1',
+    'build_runner': r'^2.4.11',
+    'json_serializable': r'^6.8.0',
+    'test': r'^1.25.7',
     'pubspec_generator': r'^4.0.0',
   };
 
