@@ -33,7 +33,6 @@ ArgParser _argParser() {
   parser.addFlag('help', abbr: 'h', help: 'Display usage information');
   addVerboseFlag(parser);
   outputPath(parser);
-  localLibs(parser);
   parser.addMultiOption('sql',
       abbr: 's',
       help:

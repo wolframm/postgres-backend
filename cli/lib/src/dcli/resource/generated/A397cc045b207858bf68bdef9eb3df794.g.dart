@@ -1,0 +1,70 @@
+// ignore: prefer_relative_imports
+import 'package:dcli/dcli.dart';
+
+/// GENERATED -- GENERATED
+///
+/// DO NOT MODIFIY
+///
+/// This script is generated via [Resource.pack()].
+///
+/// GENERATED - GENERATED
+
+class A397cc045b207858bf68bdef9eb3df794 extends PackedResource {
+  /// PackedResource - client/lib/src/jwt.dart
+  const A397cc045b207858bf68bdef9eb3df794();
+
+  /// A hash of the resource (pre packed) calculated by
+  /// [calculateHash].
+  /// This hash can be used to check if the resource needs to
+  /// be updated on the target system.
+  /// Use :
+  /// ```dart
+  ///   calculateHash(pathToResource).hexEncode() == packResource.checksum
+  /// ```
+  /// to compare the checksum of the local file with
+  /// this checksum
+  @override
+  String get checksum =>
+      '331225b159008413483541d060ed535b';
+
+  /// <package>/resources relative path to the original resource.
+  @override
+  String get originalPath => 'client/lib/src/jwt.dart';
+
+  @override
+  String get content => '''
+aW1wb3J0ICdwYWNrYWdlOmRhcnRfanNvbndlYnRva2VuL2RhcnRfanNvbndlYnRva2VuLmRhcnQnOwpp
+bXBvcnQgJ3BhY2thZ2U6c2hhcmVkX3ByZWZlcmVuY2VzL3NoYXJlZF9wcmVmZXJlbmNlcy5kYXJ0JzsK
+CmNvbnN0IGFjY2Vzc1Rva2VuRmllbGROYW1lID0gJ2p3dCc7CgpTdHJpbmc/IF90b2tlbjsKCmNsYXNz
+IEp3dE5vdEZvdW5kIGltcGxlbWVudHMgRXhjZXB0aW9uIHsKICBjb25zdCBKd3ROb3RGb3VuZCgpOwoK
+ICBAb3ZlcnJpZGUKICBTdHJpbmcgdG9TdHJpbmcoKSA9PiAnSnd0Tm90Rm91bmQnOwp9CgpjbGFzcyBK
+d3RFeHBpcmVkIGltcGxlbWVudHMgRXhjZXB0aW9uIHsKICBjb25zdCBKd3RFeHBpcmVkKCk7CgogIEBv
+dmVycmlkZQogIFN0cmluZyB0b1N0cmluZygpID0+ICdKd3RFeHBpcmVkJzsKfQoKLy8vIFJldHJpZXZl
+cyB0aGUgSldUIGFjY2VzcyB0b2tlbiBmcm9tIGxvY2FsIHN0b3JhZ2UKLy8vCi8vLyBUaHJvd3MgZXhj
+ZXB0aW9ucyBpZiB0b2tlbiBpcyBub3QgZm91bmQgb3IgZXhwaXJlZC4KRnV0dXJlPFN0cmluZz4gZ2V0
+Snd0KCkgYXN5bmMgewogIGZpbmFsIHRva2VuID0gX3Rva2VuID8/IGF3YWl0IF9nZXRTdG9yZWRUb2tl
+bigpOwogIGlmICh0b2tlbiA9PSBudWxsKSB0aHJvdyBjb25zdCBKd3ROb3RGb3VuZCgpOwogIGlmIChf
+dG9rZW5FeHBpcmVkKHRva2VuKSkgdGhyb3cgY29uc3QgSnd0RXhwaXJlZCgpOwogIF90b2tlbiA9IHRv
+a2VuOwogIHJldHVybiB0b2tlbjsKfQoKLy8vIENoZWNrIGlmIGEgSldUIGFjY2VzcyB0b2tlbiBpcyBh
+dmFpbGFibGUgYW5kIG5vdCBleHBpcmVkLgpGdXR1cmU8Ym9vbD4gaGFzVmFsaWRKd3QoKSBhc3luYyB7
+CiAgZmluYWwgdG9rZW4gPSBfdG9rZW4gPz8gYXdhaXQgX2dldFN0b3JlZFRva2VuKCk7CiAgaWYgKHRv
+a2VuID09IG51bGwpIHJldHVybiBmYWxzZTsKICBpZiAoX3Rva2VuRXhwaXJlZCh0b2tlbikpIHJldHVy
+biBmYWxzZTsKICBfdG9rZW4gPSB0b2tlbjsKICByZXR1cm4gdHJ1ZTsKfQoKLy8vIFN0b3JlIHRoZSBK
+V1QgYWNjZXNzIHRva2VuIGluIGxvY2FsIHN0b3JhZ2UKLy8vCi8vLyBPbmx5IHN0b3JlcyB0b2tlbnMg
+dGhhdCBhcmUgbm90IGV4cGlyZWQgYW5kIGRpZmZlcmVudCBmcm9tIGV4aXN0aW5nIHRva2VuIChpZiBh
+bnkpCnN0b3JlSnd0KFN0cmluZz8gdG9rZW4pIGFzeW5jIHsKICBpZiAodG9rZW4gPT0gbnVsbCkgcmV0
+dXJuOwogIGlmIChfdG9rZW5FeHBpcmVkKHRva2VuKSkgcmV0dXJuOwogIGlmIChfdG9rZW4gPT0gdG9r
+ZW4pIHJldHVybjsKICBmaW5hbCBwcmVmcyA9IGF3YWl0IFNoYXJlZFByZWZlcmVuY2VzLmdldEluc3Rh
+bmNlKCk7CiAgYXdhaXQgcHJlZnMuc2V0U3RyaW5nKGFjY2Vzc1Rva2VuRmllbGROYW1lLCB0b2tlbik7
+CiAgX3Rva2VuID0gdG9rZW47Cn0KCmJvb2wgX3Rva2VuRXhwaXJlZChTdHJpbmcgdG9rZW4pID0+IGdl
+dEV4cCh0b2tlbikuaXNCZWZvcmUoRGF0ZVRpbWUubm93KCkpOwoKRGF0ZVRpbWUgZ2V0RXhwKFN0cmlu
+ZyB0b2tlbikgPT4gRGF0ZVRpbWUuZnJvbU1pbGxpc2Vjb25kc1NpbmNlRXBvY2goCiAgICBKV1QuZGVj
+b2RlKHRva2VuKS5wYXlsb2FkWydleHAnXSAqIDEwMDApOwoKRnV0dXJlPFN0cmluZz8+IF9nZXRTdG9y
+ZWRUb2tlbigpIGFzeW5jIHsKICBmaW5hbCBwcmVmcyA9IGF3YWl0IFNoYXJlZFByZWZlcmVuY2VzLmdl
+dEluc3RhbmNlKCk7CiAgcmV0dXJuIHByZWZzLmdldFN0cmluZyhhY2Nlc3NUb2tlbkZpZWxkTmFtZSk7
+Cn0KCi8vLyBSZW1vdmVzIHRoZSBKV1QgYWNjZXNzIHRva2VuIGZyb20gbG9jYWwgc3RvcmFnZQpjbGVh
+ckp3dCgpIGFzeW5jIHsKICBfdG9rZW4gPSBudWxsOwogIGZpbmFsIHByZWZzID0gYXdhaXQgU2hhcmVk
+UHJlZmVyZW5jZXMuZ2V0SW5zdGFuY2UoKTsKICBhd2FpdCBwcmVmcy5yZW1vdmUoYWNjZXNzVG9rZW5G
+aWVsZE5hbWUpOwp9Cg==
+  ''';
+}
