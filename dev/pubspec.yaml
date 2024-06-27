@@ -1,6 +1,6 @@
 name: dev
 description: Dev helper for PB CLI
-version: 0.0.1-alpha.17
+version: 0.0.1-alpha.18
 
 environment:
   sdk: ^3.2.0

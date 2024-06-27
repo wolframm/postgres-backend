@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-06-27
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`dev` - `v0.0.1-alpha.18`](#dev---v001-alpha18)
+
+---
+
+#### `dev` - `v0.0.1-alpha.18`
+
+ - **FEAT**: refactored client, server and converter libs as DCli resource.
+
+
 ## 2024-06-25
 
 ### Changes
